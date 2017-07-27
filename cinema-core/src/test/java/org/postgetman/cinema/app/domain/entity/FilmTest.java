@@ -1,7 +1,9 @@
 package org.postgetman.cinema.app.domain.entity;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+
 import org.postgetman.cinema.app.domain.Film;
 import org.postgetman.cinema.app.domain.FilmSession;
 import org.postgetman.cinema.app.domain.Hall;
@@ -24,7 +26,7 @@ public class FilmTest {
 
         film.addFilmSession(Hall.BLUE);
         assertTrue(containsFilmSession(film, filmSession));
-        assertEquals(film,filmSession.getFilm());
+        Assert.assertEquals(film,filmSession.getFilm());
 
     }
 
@@ -41,7 +43,7 @@ public class FilmTest {
         film.addFilmSession(Hall.BLUE);
         film.addFilmSession(Hall.BLUE);
 
-        assertEquals(film.getFilmSessions(),1);
+        Assert.assertEquals(film.getFilmSessions(),1);
 
     }
 

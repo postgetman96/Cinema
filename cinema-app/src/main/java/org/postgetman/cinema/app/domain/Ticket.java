@@ -4,7 +4,6 @@ import org.postgetman.cinema.app.domain.entity.base.BaseEntity;
 
 public class Ticket extends BaseEntity{
 
-    private Long filmId;
 
     private int row;
 
@@ -13,10 +12,6 @@ public class Ticket extends BaseEntity{
     private int price;
 
 
-
-    public Long getFilmId() { return filmId; }
-
-    public void setFilmId(Long filmId) { this.filmId = filmId; }
 
     public int getRow() { return row; }
 

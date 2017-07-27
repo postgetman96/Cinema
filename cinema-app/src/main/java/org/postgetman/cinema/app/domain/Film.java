@@ -22,6 +22,10 @@ public class Film extends BaseEntity{
 
 
 
+    public Film(final String name){
+        this.name = name;
+    }
+
     public String getName() { return name; }
 
     public void setName(String name) { this.name = name; }
@@ -46,14 +50,14 @@ public class Film extends BaseEntity{
         this.filmSessions = filmSessions;
     }
 
-    public void addFilmSession(final FilmSession filmSession) {
-        Objects.requireNonNull(filmSession, "film session is not initialized");
+    public FilmSession addFilmSession(final Hall hall) {
         if(filmSessions == null) {
             filmSessions = new HashSet<>();
         }
+        FilmSession filmSession = new FilmSession(this,hall);
         filmSessions.add(filmSession);
-        filmSession.setFilm(this);
 
+        return filmSession;
     }
 
     public void removeFilmSession(FilmSession filmSession){

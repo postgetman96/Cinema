@@ -13,4 +13,5 @@ public class PersistenceException extends AppException{
     public PersistenceException(String message) {
         super(message);
     }
+
 }

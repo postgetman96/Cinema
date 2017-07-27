@@ -1,4 +1,7 @@
 package org.postgetman.cinema.app.domain;
 
-public class Film {
+import org.postgetman.cinema.app.domain.entity.base.BaseEntity;
+
+public class Film extends BaseEntity{
+
 }

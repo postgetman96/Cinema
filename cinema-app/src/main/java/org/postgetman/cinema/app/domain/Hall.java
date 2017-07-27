@@ -1,4 +1,8 @@
 package org.postgetman.cinema.app.domain;
 
-public class Hall {
+public enum Hall {
+
+    YELLOW,
+    BLUE,
+    ORANGE
 }

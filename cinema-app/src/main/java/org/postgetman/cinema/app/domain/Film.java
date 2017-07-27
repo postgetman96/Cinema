@@ -54,7 +54,7 @@ public class Film extends BaseEntity{
         if(filmSessions == null) {
             filmSessions = new HashSet<>();
         }
-        FilmSession filmSession = new FilmSession(this,hall);
+        FilmSession filmSession = new FilmSession(this);
         filmSessions.add(filmSession);
 
         return filmSession;

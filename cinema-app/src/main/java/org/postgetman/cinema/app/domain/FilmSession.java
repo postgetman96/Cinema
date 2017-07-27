@@ -20,7 +20,9 @@ public class FilmSession extends BaseEntity{
 
     public Date getDate() { return date; }
 
-    public void setTime(Time time) { this.time = time; }
+    public void setDate(Date date) { this.date = date; }
+
+
 
 
 }

@@ -1,6 +1,7 @@
 package org.postgetman.cinema.app.domain;
 
-import org.postgetman.cinema.app.domain.entity.base.BaseEntity;
+//import org.postgetman.cinema.app.domain.BaseEntity;
+
 import org.postgetman.cinema.app.infra.util.CommonUtil;
 
 import java.util.HashSet;
@@ -8,7 +9,7 @@ import java.util.Objects;
 import java.util.Set;
 
 
-public class Film extends BaseEntity{
+public class Film extends BaseEntity {
 
     private String name;
 
@@ -21,26 +22,41 @@ public class Film extends BaseEntity{
     private Set<FilmSession> filmSessions;
 
 
-
-    public Film(final String name){
+    public Film(final String name) {
         this.name = name;
     }
 
-    public String getName() { return name; }
+    public String getName() {
+        return name;
+    }
 
-    public void setName(String name) { this.name = name; }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public String getGenre() { return genre; }
+    public String getGenre() {
+        return genre;
+    }
 
-    public void setGenre(String genre) { this.genre = genre; }
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
 
-    public String getProducer() { return producer; }
+    public String getProducer() {
+        return producer;
+    }
 
-    public void setProducer(String producer) { this.producer = producer; }
+    public void setProducer(String producer) {
+        this.producer = producer;
+    }
 
-    public int getDuration() { return duration; }
+    public int getDuration() {
+        return duration;
+    }
 
-    public void setDuration(int duration) { this.duration = duration; }
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
 
     public Set<FilmSession> getFilmSessions() {
         return CommonUtil.getSafeSet(filmSessions);
@@ -51,7 +67,7 @@ public class Film extends BaseEntity{
     }
 
     public FilmSession addFilmSession(final Hall hall) {
-        if(filmSessions == null) {
+        if (filmSessions == null) {
             filmSessions = new HashSet<>();
         }
         FilmSession filmSession = new FilmSession(this);
@@ -60,9 +76,9 @@ public class Film extends BaseEntity{
         return filmSession;
     }
 
-    public void removeFilmSession(FilmSession filmSession){
+    public void removeFilmSession(FilmSession filmSession) {
         Objects.requireNonNull(filmSession, "film session is not initialized");
-        if(filmSessions == null) {
+        if (filmSessions == null) {
             return;
         }
         filmSessions.remove(filmSession);

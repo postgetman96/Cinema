@@ -1,10 +1,14 @@
-package org.postgetman.cinema.app.domain.entity.base;
+package org.postgetman.cinema.app.domain;
 
 public abstract class BaseEntity {
 
     private Long id;
 
-    public Long getId() { return id; }
+    public Long getId() {
+        return id;
+    }
 
-    public void setId(Long id) { this.id = id; }
+    public void setId(Long id) {
+        this.id = id;
+    }
 }

@@ -7,16 +7,10 @@ import java.util.Objects;
 
 public class FilmSessionCriteria {
 
-    private Film film;
-
     private LocalDate date;
 
     public static FilmSessionCriteria byDate(LocalDate date){
         return new FilmSessionCriteria(date);
-    }
-
-    public FilmSessionCriteria(){
-
     }
 
     public FilmSessionCriteria(LocalDate date){

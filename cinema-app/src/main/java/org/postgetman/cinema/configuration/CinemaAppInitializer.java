@@ -3,16 +3,16 @@ package org.postgetman.cinema.configuration;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class HelloWorldInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class CinemaAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[] { HelloWorldConfiguration.class };
+        return new Class[] { CoreContextConfiguration.class };
     }
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return null;
+        return  new Class[] { ServletConfiguration.class };
     }
 
     @Override

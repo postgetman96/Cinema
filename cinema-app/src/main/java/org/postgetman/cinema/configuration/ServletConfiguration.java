@@ -3,11 +3,11 @@ package org.postgetman.cinema.configuration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "org.postgetman.cinema.app.controller")
-public class HelloWorldConfiguration {
-
+public class ServletConfiguration extends WebMvcConfigurerAdapter{
 
 }

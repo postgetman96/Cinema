@@ -39,5 +39,17 @@ public class FilmSessionServiceImplTest {
         assertEquals(filmSessions.get(0).getFilm().getName(),"Troya");
     }
 
+    @Test
+    public void testRemoveFilmSessionSuccess(){
+        FilmSession filmSession = new FilmSession(new Film("Troya"),LocalDate.now(),
+                LocalDateTime.now(), Hall.ORANGE);
+
+        filmSessionService.addFilmSession(filmSession);
+        filmSessionService.removeFilmSession(filmSession);
+
+        List<FilmSession> filmSessions = filmSessionService.findFilmSessions();
+        assertEquals(filmSessions.size(),0);
+    }
+
 
 }

@@ -18,6 +18,7 @@ public class FilmSessionCriteria {
     public FilmSessionCriteria(){
 
     }
+
     public FilmSessionCriteria(LocalDate date){
         this.date = Objects.requireNonNull(date);
     }

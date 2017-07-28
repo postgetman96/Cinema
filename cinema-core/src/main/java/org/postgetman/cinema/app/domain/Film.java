@@ -82,4 +82,5 @@ public class Film extends BaseEntity {
         }
         filmSessions.remove(filmSession);
     }
+
 }

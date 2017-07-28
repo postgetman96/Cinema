@@ -32,8 +32,6 @@ public class FilmServiceImpl implements FilmService {
 
     @Override
     public void removeFilm(Film film){
-        if(films.contains(film)){
-            films.remove(film);
-        }
+        films.remove(film);
     }
 }

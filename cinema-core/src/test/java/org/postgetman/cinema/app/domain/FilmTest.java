@@ -17,6 +17,7 @@ public class FilmTest {
     private Film film;
     private LocalDate date;
     private LocalDateTime time;
+    private Hall hall;
 
     @Before
     public void setup(){
@@ -27,7 +28,7 @@ public class FilmTest {
 
     @Test
     public void testAddValidFilmSession(){
-        FilmSession filmSession = new FilmSession(film,date,time);
+        FilmSession filmSession = new FilmSession(film,date,time,hall);
         film.addFilmSession(filmSession);
 
         assertTrue(containsFilmSession(film,filmSession));
@@ -36,7 +37,7 @@ public class FilmTest {
 
     @Test
     public void testAddDuplicateFilmSessionFailure(){
-        FilmSession filmSession = new FilmSession(film,date,time);
+        FilmSession filmSession = new FilmSession(film,date,time,hall);
 
         film.addFilmSession(filmSession);
         film.addFilmSession(filmSession);
@@ -47,7 +48,7 @@ public class FilmTest {
 
     @Test
     public void testRemoveFilmSessionSucces(){
-        FilmSession filmSession = new FilmSession(film,date,time);
+        FilmSession filmSession = new FilmSession(film,date,time,hall);
 
         film.addFilmSession(filmSession);
         film.removeFilmSession(filmSession);

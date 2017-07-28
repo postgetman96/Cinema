@@ -66,14 +66,13 @@ public class Film extends BaseEntity {
         this.filmSessions = filmSessions;
     }
 
-    public FilmSession addFilmSession(final Hall hall) {
+    public void addFilmSession(FilmSession filmSession) {
         if (filmSessions == null) {
             filmSessions = new HashSet<>();
         }
-        FilmSession filmSession = new FilmSession(this);
         filmSessions.add(filmSession);
+        filmSession.setFilm(this);
 
-        return filmSession;
     }
 
     public void removeFilmSession(FilmSession filmSession) {

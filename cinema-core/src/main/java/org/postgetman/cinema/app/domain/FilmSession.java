@@ -21,8 +21,10 @@ public class FilmSession extends BaseEntity {
     private int currentNumberOfTickets;
 
 
-    public FilmSession(final Film film) {
+    public FilmSession(final Film film,LocalDate date,LocalDateTime time) {
         this.film = film;
+        this.date = date;
+        this.time = time;
     }
 
 

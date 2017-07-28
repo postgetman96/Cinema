@@ -4,9 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import org.postgetman.cinema.app.domain.Film;
-import org.postgetman.cinema.app.domain.FilmSession;
-import org.postgetman.cinema.app.domain.Hall;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -15,64 +15,49 @@ public class FilmTest {
 
 
     private Film film;
-    /*
+    private LocalDate date;
+    private LocalDateTime time;
+
     @Before
     public void setup(){
         film = new Film("Saw");
+        date = LocalDate.now();
+        time = LocalDateTime.now();
     }
-    */
+
     @Test
     public void testAddValidFilmSession(){
+        FilmSession filmSession = new FilmSession(film,date,time);
+        film.addFilmSession(filmSession);
 
-
-        /*FilmSession filmSession = new FilmSession(film);
-
-        film.addFilmSession(Hall.BLUE);
-        assertTrue(containsFilmSession(film, filmSession));
-        Assert.assertEquals(film,filmSession.getFilm());
-        */
-
+        assertTrue(containsFilmSession(film,filmSession));
+        assertEquals(film,filmSession.getFilm());
     }
-    /*
-    @Test(expected = NullPointerException.class)
-    public void testAddNullFilmSessionFailure(){
-       /* film.addFilmSession(null);
-        assertTrue(false);
-        */
 
-    /*
     @Test
     public void testAddDuplicateFilmSessionFailure(){
-        FilmSession filmSession = new FilmSession(film);
+        FilmSession filmSession = new FilmSession(film,date,time);
 
-        film.addFilmSession(Hall.BLUE);
-        film.addFilmSession(Hall.BLUE);
+        film.addFilmSession(filmSession);
+        film.addFilmSession(filmSession);
 
-        Assert.assertEquals(film.getFilmSessions(),1);
+        Assert.assertEquals(film.getFilmSessions().size(),1);
 
     }
 
     @Test
     public void testRemoveFilmSessionSucces(){
-        FilmSession filmSession = new FilmSession(film);
+        FilmSession filmSession = new FilmSession(film,date,time);
 
-        film.addFilmSession(Hall.ORANGE);
+        film.addFilmSession(filmSession);
         film.removeFilmSession(filmSession);
 
         assertTrue(film.getFilmSessions().isEmpty());
     }
 
-    @Test(expected = NullPointerException.class)
-    public void testRemoveNullFilmSessionFailure(){
-        film.removeFilmSession(null);
-
-        assertTrue(false);
-    }
-
     private boolean containsFilmSession(Film film,FilmSession filmSession){
         return film.getFilmSessions().contains(filmSession);
     }
-    */
 
 
 

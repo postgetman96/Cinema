@@ -2,9 +2,12 @@ package org.postgetman.cinema.app.infra.util;
 
 
 
-import org.postgetman.cinema.app.infra.exception.flow.InvalidParameterException;
+
 
 import org.junit.Test;
+
+import java.security.InvalidParameterException;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;

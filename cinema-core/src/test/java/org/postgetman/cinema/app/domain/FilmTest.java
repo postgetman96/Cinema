@@ -13,7 +13,6 @@ import static org.junit.Assert.assertTrue;
 
 public class FilmTest {
 
-
     private Film film;
     private LocalDate date;
     private LocalDateTime time;

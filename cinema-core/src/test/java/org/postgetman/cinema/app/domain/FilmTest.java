@@ -23,6 +23,7 @@ public class FilmTest {
         film = new Film("Saw");
         date = LocalDate.now();
         time = LocalDateTime.now();
+        hall = Hall.ORANGE;
     }
 
     @Test

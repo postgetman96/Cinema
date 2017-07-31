@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @RestController
@@ -23,7 +22,8 @@ public class FilmController {
         return service.findFilms();
     }
 
-    public Optional<Film> findFilmByName(final String name){
+    @GetMapping("/{name}")
+    public Film findFilmByName(@PathVariable final String name){
         return service.findFilmByName(name);
     }
 
@@ -39,7 +39,7 @@ public class FilmController {
     }
 
     @DeleteMapping
-    public void removeFilm(String filmName){
+    public void removeFilm(final String filmName){
         service.removeFilm(filmName);
     }
 

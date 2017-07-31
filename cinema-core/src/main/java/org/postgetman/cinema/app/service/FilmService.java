@@ -9,7 +9,7 @@ public interface FilmService {
 
     List<Film> findFilms();
 
-    Optional<Film> findFilmByName(final String name);
+    Film findFilmByName(final String name);
 
     void addFilm(Film film);
 

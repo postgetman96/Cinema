@@ -23,8 +23,8 @@ public class FilmServiceImpl implements FilmService {
     }
 
     @Override
-    public Optional<Film> findFilmByName(final String name){
-        return films.stream().filter((film) -> film.getName().equals(name)).findFirst();
+    public Film findFilmByName(final String name){
+        return films.stream().filter((film) -> film.getName().equals(name)).findFirst().get();
     }
 
     @Override

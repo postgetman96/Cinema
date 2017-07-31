@@ -12,6 +12,7 @@ import static org.junit.Assert.assertTrue;
 
 public class FilmServiceImplTest {
 
+
     private FilmService service;
 
     @Before
@@ -41,5 +42,17 @@ public class FilmServiceImplTest {
         List<Film> films = service.findFilms();
         assertEquals(films.size(),0);
 
+    }
+    @Test
+    public void testAddFilmDuplicate(){
+        Film film = new Film("HarryPotter");
+
+        service.addFilm(film);
+        service.addFilm(film);
+        service.addFilm(film);
+
+        List<Film> films = service.findFilms();
+
+        assertEquals(films.size(),1);
     }
 }

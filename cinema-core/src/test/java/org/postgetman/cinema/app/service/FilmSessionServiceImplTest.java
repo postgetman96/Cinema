@@ -27,7 +27,6 @@ public class FilmSessionServiceImplTest {
         List<FilmSession>filmSessions = filmSessionService.findFilmSessions();
         assertTrue(filmSessions.isEmpty());
     }
-
     @Test
     public void addNewFilmSessionSuccess(){
         FilmSession filmSession = new FilmSession(new Film("Troya"),LocalDate.now(),
@@ -38,13 +37,11 @@ public class FilmSessionServiceImplTest {
         assertEquals(filmSessions.size(),1);
         assertEquals(filmSessions.get(0).getFilm().getName(),"Troya");
     }
-
     @Test
     public void testRemoveFilmSessionSuccess(){
         FilmSession filmSession = new FilmSession(new Film("Troya"),LocalDate.now(),
                 LocalDateTime.now(), Hall.ORANGE);
 
-        filmSessionService.addFilmSession(filmSession);
         filmSessionService.removeFilmSession(filmSession);
 
         List<FilmSession> filmSessions = filmSessionService.findFilmSessions();

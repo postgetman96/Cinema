@@ -1,5 +1,7 @@
 package org.postgetman.cinema.app.dto;
 
+import org.postgetman.cinema.app.domain.Hall;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -13,11 +15,11 @@ public class CreateFilmSessionDTO {
 
     private LocalDateTime time;
 
-    public String getFilmName() {
+    public String getFilmName(){
         return filmName;
     }
 
-    public void setFilmName(String filmName) {
+    public void setFilm(String filmName){
         this.filmName = filmName;
     }
 
@@ -29,11 +31,12 @@ public class CreateFilmSessionDTO {
         this.date = date;
     }
 
+
     public String getHallName() {
         return hallName;
     }
 
-    public void setHallName(String hallName) {
+    public void setHall(String hallName){
         this.hallName = hallName;
     }
 

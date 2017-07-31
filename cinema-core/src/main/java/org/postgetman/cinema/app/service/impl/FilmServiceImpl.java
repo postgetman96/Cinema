@@ -29,20 +29,13 @@ public class FilmServiceImpl implements FilmService {
 
     @Override
     public void addFilm(Film film){
-        if(!films.contains(film)){
+        if(!films.contains(film)) {
             films.add(film);
         }
     }
 
     @Override
     public void removeFilm(final String name){
-        Iterator<Film> iterator = films.listIterator();
-
-        while(iterator.hasNext()){
-            Film film = iterator.next();
-                if(film.getName().equals(name)){
-                    iterator.remove();
-                }
-        }
+        films.removeIf(film -> film.getName().equals(name));
     }
 }

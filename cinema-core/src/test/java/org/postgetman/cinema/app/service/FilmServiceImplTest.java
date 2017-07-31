@@ -36,8 +36,7 @@ public class FilmServiceImplTest {
     @Test
     public void testRemoveFilmSuccess(){
         Film film = new Film("Lord of the rings");
-        service.addFilm(film);
-        service.removeFilm(film);
+        service.removeFilm(film.getName());
 
         List<Film> films = service.findFilms();
         assertEquals(films.size(),0);

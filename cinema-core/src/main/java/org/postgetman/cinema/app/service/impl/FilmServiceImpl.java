@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 @Service
 public class FilmServiceImpl implements FilmService {
@@ -31,7 +32,14 @@ public class FilmServiceImpl implements FilmService {
     }
 
     @Override
-    public void removeFilm(Film film){
-        films.remove(film);
+    public void removeFilm(String name){
+        ListIterator<Film> iterator = films.listIterator();
+
+        while(iterator.hasNext()){
+            Film film = iterator.next();
+                if(film.getName().equals(name)){
+                    iterator.remove();
+                }
+        }
     }
 }

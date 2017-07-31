@@ -10,5 +10,5 @@ public interface FilmService {
 
     void addFilm(Film film);
 
-    void removeFilm(Film film);
+    void removeFilm(String name);
 }

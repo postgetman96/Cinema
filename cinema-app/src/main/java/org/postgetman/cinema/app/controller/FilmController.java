@@ -36,7 +36,7 @@ public class FilmController {
 
     @DeleteMapping
     public void removeFilm(String filmName){
-        service.removeFilm(new Film(filmName));
+        service.removeFilm(filmName);
     }
 
 }

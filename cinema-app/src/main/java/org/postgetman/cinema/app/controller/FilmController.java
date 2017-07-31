@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @RestController
@@ -17,10 +18,13 @@ public class FilmController {
     @Autowired
     public FilmService service;
 
-
     @GetMapping
     public List<Film> findFilms() {
         return service.findFilms();
+    }
+
+    public Optional<Film> findFilmByName(final String name){
+        return service.findFilmByName(name);
     }
 
     @PostMapping

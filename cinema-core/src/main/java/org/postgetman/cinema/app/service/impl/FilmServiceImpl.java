@@ -6,9 +6,7 @@ import org.postgetman.cinema.app.infra.util.CommonUtil;
 import org.postgetman.cinema.app.service.FilmService;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 @Service
 public class FilmServiceImpl implements FilmService {
@@ -25,14 +23,8 @@ public class FilmServiceImpl implements FilmService {
     }
 
     @Override
-    public Film findFilmById(Long id){
-        for(Film film : films){
-            if(film.getId() == id){
-                return film;
-            }
-        }
-
-        return null;
+    public Optional<Film> findFilmByName(final String name){
+        return films.stream().filter((film) -> film.getName().equals(name)).findFirst();
     }
 
     @Override
@@ -43,8 +35,8 @@ public class FilmServiceImpl implements FilmService {
     }
 
     @Override
-    public void removeFilm(String name){
-        ListIterator<Film> iterator = films.listIterator();
+    public void removeFilm(final String name){
+        Iterator<Film> iterator = films.listIterator();
 
         while(iterator.hasNext()){
             Film film = iterator.next();

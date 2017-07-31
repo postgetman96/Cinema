@@ -83,4 +83,27 @@ public class Film extends BaseEntity {
         filmSessions.remove(filmSession);
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Film)) return false;
+
+        Film film = (Film) o;
+
+        if (duration != film.duration) return false;
+        if (!name.equals(film.name)) return false;
+        if (!genre.equals(film.genre)) return false;
+        if (!producer.equals(film.producer)) return false;
+        return filmSessions.equals(film.filmSessions);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + genre.hashCode();
+        result = 31 * result + producer.hashCode();
+        result = 31 * result + duration;
+        result = 31 * result + filmSessions.hashCode();
+        return result;
+    }
 }

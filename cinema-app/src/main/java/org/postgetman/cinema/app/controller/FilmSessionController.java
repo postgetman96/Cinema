@@ -1,7 +1,6 @@
 package org.postgetman.cinema.app.controller;
 
 import org.postgetman.cinema.app.domain.FilmSession;
-import org.postgetman.cinema.app.dto.CreateFilmDTO;
 import org.postgetman.cinema.app.dto.CreateFilmSessionDTO;
 import org.postgetman.cinema.app.service.impl.FilmSessionServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

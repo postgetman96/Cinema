@@ -9,6 +9,10 @@ public class CreateFilmDTO {
 
     private int duration;
 
+    public CreateFilmDTO(){
+
+    }
+
     public String getName() {
         return name;
     }

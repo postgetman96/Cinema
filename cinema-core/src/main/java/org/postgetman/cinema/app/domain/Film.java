@@ -1,6 +1,5 @@
 package org.postgetman.cinema.app.domain;
 
-//import org.postgetman.cinema.app.domain.BaseEntity;
 
 import org.postgetman.cinema.app.infra.util.CommonUtil;
 
@@ -21,7 +20,9 @@ public class Film extends BaseEntity {
 
     private Set<FilmSession> filmSessions;
 
+    public Film(){
 
+    }
     public Film(final String name) {
         this.name = name;
     }

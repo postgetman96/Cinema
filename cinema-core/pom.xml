@@ -23,6 +23,11 @@
             <artifactId>spring-context</artifactId>
             <version>${springframework.version}</version>
         </dependency>
+        <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer</artifactId>
+            <version>RELEASE</version>
+        </dependency>
     </dependencies>
 
 </project>

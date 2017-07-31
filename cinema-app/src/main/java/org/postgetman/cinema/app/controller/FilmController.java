@@ -1,6 +1,5 @@
 package org.postgetman.cinema.app.controller;
 
-
 import org.postgetman.cinema.app.domain.Film;
 import org.postgetman.cinema.app.dto.CreateFilmDTO;
 import org.postgetman.cinema.app.service.FilmService;
@@ -9,10 +8,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @RestController
 @RequestMapping(path="/film")
-public class FilmController {
+public class FilmController extends BaseController{
 
     @Autowired
     public FilmService service;
@@ -28,14 +26,8 @@ public class FilmController {
     }
 
     @PostMapping
-    public void addFilm(@RequestBody CreateFilmDTO filmDTO){
-
-        Film film = new Film(filmDTO.getName());
-        film.setDuration(filmDTO.getDuration());
-        film.setGenre(filmDTO.getGenre());
-        film.setProducer(filmDTO.getProducer());
-
-        service.addFilm(film);
+    public void addFilm(@RequestBody CreateFilmDTO createFilmDTO){
+        service.addFilm(convert(createFilmDTO, Film.class));
     }
 
     @DeleteMapping

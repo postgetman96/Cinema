@@ -25,6 +25,17 @@ public class FilmServiceImpl implements FilmService {
     }
 
     @Override
+    public Film findFilmById(Long id){
+        for(Film film : films){
+            if(film.getId() == id){
+                return film;
+            }
+        }
+
+        return null;
+    }
+
+    @Override
     public void addFilm(Film film){
         if(!films.contains(film)){
             films.add(film);

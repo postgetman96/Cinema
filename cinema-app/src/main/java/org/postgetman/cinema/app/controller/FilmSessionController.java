@@ -15,14 +15,10 @@ public class FilmSessionController extends BaseController{
     @Autowired
     private FilmSessionServiceImpl service;
 
-    @GetMapping
-    public List<FilmSession> getFilmSessions(){
-        return service.findFilmSessions();
-    }
 
     @PostMapping
     public void addFilmsession(@RequestBody CreateFilmSessionDTO filmSessionDTO){
-        service.addFilmSession(convert(filmSessionDTO,FilmSession.class));
+
     }
 
     @DeleteMapping

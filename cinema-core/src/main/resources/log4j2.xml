@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="INFO">
+
     <Appenders>
-        <File name="fileLog" fileName="/home/user/Server/apache-tomcat-8.5.16/logs/service.log">
+        <File name="fileLog" fileName="${sys:catalina.home}/logs/test.log">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level - %msg%n" />
         </File>
         <Console name="STDOUT" target="SYSTEM_OUT">

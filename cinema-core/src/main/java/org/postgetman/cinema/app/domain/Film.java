@@ -94,8 +94,7 @@ public class Film extends BaseEntity {
         if (duration != film.duration) return false;
         if (!name.equals(film.name)) return false;
         if (!genre.equals(film.genre)) return false;
-        if (!producer.equals(film.producer)) return false;
-        return filmSessions.equals(film.filmSessions);
+        return producer.equals(film.producer);
     }
 
     @Override
@@ -104,7 +103,6 @@ public class Film extends BaseEntity {
         result = 31 * result + genre.hashCode();
         result = 31 * result + producer.hashCode();
         result = 31 * result + duration;
-        result = 31 * result + filmSessions.hashCode();
         return result;
     }
 }

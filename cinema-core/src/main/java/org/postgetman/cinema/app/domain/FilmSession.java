@@ -10,8 +10,6 @@ public class FilmSession extends BaseEntity {
 
     private Film film;
 
-    private String filmName;
-
     private LocalDate date;
 
     private Set<Ticket> tickets;

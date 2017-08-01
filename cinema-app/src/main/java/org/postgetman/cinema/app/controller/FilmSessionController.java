@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/filmSessions")
-public class FilmSessionController {
+public class FilmSessionController extends BaseController{
 
     @Autowired
     private FilmSessionServiceImpl service;
@@ -22,7 +22,7 @@ public class FilmSessionController {
 
     @PostMapping
     public void addFilmsession(@RequestBody CreateFilmSessionDTO filmSessionDTO){
-
+        service.addFilmSession(convert(filmSessionDTO,FilmSession.class));
     }
 
     @DeleteMapping

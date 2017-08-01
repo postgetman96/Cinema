@@ -1,6 +1,5 @@
 package org.postgetman.cinema.app.dto;
 
-import org.postgetman.cinema.app.domain.Hall;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
